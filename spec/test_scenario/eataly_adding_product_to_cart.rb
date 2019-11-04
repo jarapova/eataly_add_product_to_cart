@@ -42,7 +42,7 @@ feature 'Eataly - adding product to cart' do
     #Click BUY button
     find(:xpath, ta('eataly:checkoutPage:buyButton', "//button[contains(@class, 'btn-checkout')]")).click
 
-    sleep 15
+    sleep 10
 
     # Set wallet information
     switch_to_frame(find(:xpath, "//iframe[@id='wallet']"))
@@ -56,6 +56,8 @@ feature 'Eataly - adding product to cart' do
     find(:xpath, ta('eataly:walletFrame:enterBtn', "//button[contains(@id, 'btnSubmit')]")).click
 
     sleep 10
+
+    find(:xpath, ta('eataly:walletFrame:acceptPayment', "//button[contains(@id, 'btnSubmit')]")).click
 
   end
 end
